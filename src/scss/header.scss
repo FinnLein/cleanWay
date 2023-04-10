@@ -36,26 +36,35 @@
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
     justify-items: center;
+
     // .main-header__search
 
     &__search {
-
     }
 
     // .main-header__logo
 
     &__logo {
-        width: rem(200);
-        height: rem(150);
-        border-radius: 45%;
-        background-color: gray;
-
+        font-size: rem(20);
+        color: #000;
+    }
+    ._icon-logo{
+        font-size: rem(150);
     }
 
     // .main-header__user
 
     &__user {
-
+        display: flex;
+        align-items: center;
+        padding: rem(5);
+        span{
+            font-size: rem(25);
+            line-height: math.div(25, 25);
+        }
+    }
+    ._icon-user{
+        font-size: rem(40);
     }
 }
 
@@ -86,7 +95,7 @@
 		height: rem(41);
 		padding: 0px rem(20) 0px rem(50);
 		border-radius: rem(3);
-        
+        border: 1px solid #000;
     }
 }
 

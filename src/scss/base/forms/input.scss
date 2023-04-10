@@ -13,13 +13,17 @@ textarea {
 	width: 100%;
 	display: block;
 	padding: 0px 20px;
-	border: 1px solid #eee;
-	&.form-focus {
-	}
-	&._error {
-	}
+	border: 1px solid #000;
+	
+	
+}
+.form-focus {
+}
+._error {
 }
 textarea.input {
 	resize: none;
 	padding: 0px 0px;
 }
+
+

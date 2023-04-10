@@ -41,8 +41,8 @@ export function formFieldsInit(options = { viewPass: false }) {
 				targetElement.placeholder = '';
 			}
 			if (!targetElement.hasAttribute('data-no-focus-classes')) {
-				targetElement.classList.add('_form-focus');
-				targetElement.parentElement.classList.add('_form-focus');
+				targetElement.classList.add('form-focus');
+				targetElement.parentElement.classList.add('form-focus');
 			}
 			formValidate.removeError(targetElement);
 		}
@@ -54,8 +54,8 @@ export function formFieldsInit(options = { viewPass: false }) {
 				targetElement.placeholder = targetElement.dataset.placeholder;
 			}
 			if (!targetElement.hasAttribute('data-no-focus-classes')) {
-				targetElement.classList.remove('_form-focus');
-				targetElement.parentElement.classList.remove('_form-focus');
+				targetElement.classList.remove('form-focus');
+				targetElement.parentElement.classList.remove('form-focus');
 			}
 			// Моментальная валидация
 			if (targetElement.hasAttribute('data-validate')) {
