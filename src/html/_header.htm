@@ -1,0 +1,46 @@
+<header class="header">
+	<div class="header__container">
+		<div class="header__content">
+			<div class="header__main main-header">
+				<div class="main-header__search search-header">
+					<form action="#" class="search-header">
+						<button type="submit" class="search-header__button _icon-search"></button>
+						<input  autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Найди свой путь" class="search-header__input">
+					</form>
+				</div>
+				<a href="#" class="main-header__logo"></a>
+				<a href="#" class="main-header__user _icon-user"></a>
+			</div>
+			<nav style="display: none" class="header__menu menu-header">
+				<ul class="menu-header__items">
+					<li class="menu-header__item menu-header__dropdown">
+						<button data-path="one" class="menu-header__dropdown-toggle">Lorem</button>
+						<ul data-target="one" class="menu-header__dropdown-menu" aria-labelledby="dropdownMenuButton1">
+						  <li><a class="menu-header__dropdown-item" href="">Lorem, ipsum dolor.<span></span></a></li>
+						  <li><a class="menu-header__dropdown-item" href="">Lorem <span></span></a></li>
+						  <li><a class="menu-header__dropdown-item" href="">Lorem <span></span></a></li>
+						</ul>
+					</li>
+					<li class="menu-header__item menu-header__dropdown">
+						<button data-path="two" class="menu-header__dropdown-toggle">Lorem</button>
+						<ul data-target="two" class="menu-header__dropdown-menu" aria-labelledby="dropdownMenuButton1">
+						  <li><a class="menu-header__dropdown-item" href="">Lorem <span></span></a></li>
+						  <li><a class="menu-header__dropdown-item" href="">Lorem <span></span></a></li>
+						  <li><a class="menu-header__dropdown-item" href="">Lorem <span></span></a></li>
+						</ul>
+					</li>
+					<li class="menu-header__item">Lorem</li>
+					<li class="menu-header__item">Lorem</li>				
+				</ul>
+			</nav>
+			<nav hidden class="menu"><!--штука, которая будет выпадать-->
+				<!--оболочка, будущая иконка меню, поскольку по макету она справа, то есть она справа-->
+				<button type="button" class="menu__icon icon-menu"><span></span></button>
+				<!--будем насыпать менюшек тогда, когда нам это нужно-->
+				<div class="menu__body">
+					
+				</div>
+			</nav>
+		</div>
+	</div>
+</header>

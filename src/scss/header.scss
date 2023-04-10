@@ -1,0 +1,292 @@
+.header {
+	@include adaptiveValue("padding-top", 30, 15);
+
+    // .header__container
+
+	&__container {
+        border-bottom: rem(1) solid #cacaca;
+	}
+
+	// .header__content
+
+	&__content {
+        padding-bottom: rem(20);
+	}
+
+    // .header__main
+
+    &__main {
+    }
+
+
+
+
+	/* .header__menu
+
+	&__menu {
+        
+	}
+    */
+    
+   
+}
+
+.main-header {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-items: center;
+    // .main-header__search
+
+    &__search {
+
+    }
+
+    // .main-header__logo
+
+    &__logo {
+        width: rem(200);
+        height: rem(150);
+        border-radius: 45%;
+        background-color: gray;
+
+    }
+
+    // .main-header__user
+
+    &__user {
+
+    }
+}
+
+.search-header {
+    position: relative;
+    height: rem(41);
+    min-width: rem(300);
+    // .search-header__button
+
+    &__button {
+        height: rem(41);
+		width: rem(41);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		left: rem(8);
+		top: 0;
+		font-size: rem(20);
+        border-right: 1px solid #acacac;
+        transition: all 0.3s ease 0s;
+    }
+
+    // .search-header__input
+
+    &__input{
+        width: 100%;
+		height: rem(41);
+		padding: 0px rem(20) 0px rem(50);
+		border-radius: rem(3);
+        
+    }
+}
+
+/*.menu-header {
+	display: flex;
+	align-items: center;
+	margin: 0 auto;
+	@include adaptiveValue("gap", 70, 15);
+	@media (max-width:$mobile){
+		margin: 0 0;
+	}
+
+	// .menu-header__items
+
+	&__items {
+		display: flex;
+        border-radius: rem(5);
+        background-color: #dfdfdf;
+		@include adaptiveValue("gap", 40, 15);
+		@media (max-width:$mobile){
+			display: none; 
+	   }
+	}
+ 
+	// .menu-header__item
+
+	&__item {
+        position: relative;
+        padding: 0 rem(10);
+        line-height: math.div(40, 22);
+	}
+    
+    // .menu-header__dropdown
+
+	&__dropdown {
+	}
+
+    // .menu-header__dropdown-toggle
+
+    &__dropdown-toggle {
+    }
+
+    // .menu-header__dropdown-menu
+
+    &__dropdown-menu {
+        position: absolute;
+        top: -20px;
+        transition: all .29s ease-in-out;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    &__menu-active{
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(rem(70));
+        background-color: #b4b4b4;
+        display: flex;
+        flex-direction: column;
+        gap: rem(10);
+        z-index: 2;
+        padding: rem(10) rem(5);
+        min-width: rem(150);
+        &:after{
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            width: 20px;
+            height: 20px;
+            background-color: #b4b4b4;
+            transform: rotate(40deg);
+        }
+    }
+
+    // .menu-header__dropdown-item
+
+    &__dropdown-item {
+        display: flex;
+        position: relative;
+        padding-bottom: rem(5);
+        color: #1f1e1e;
+        font-size: rem(22);
+        &:hover{
+            font-size: rem(24);
+            color: #000;
+        }
+        span{
+            padding-top: rem(36);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            border-bottom: 2px solid #f5ff9e;
+            transition: width 0.3s ease 0s;
+            width: 30%;
+            &:hover{
+                width: 75%;
+            }
+        }
+    }
+}
+*/
+
+//========================================================================================================================================================
+
+.menu {
+    // .menu__body
+
+    &__body {
+        @media (max-width:$mobile) {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: -100%;
+            overflow: auto;
+            background-color: white;
+            padding: rem(100) 0;
+            z-index: 4;
+            transition: left 0.3s ease 0s;
+            &::before{//"бровь", чтобы был нормальный скролл и не уходил вверх за текст
+				content:'';
+				position: fixed;
+				width: 100%;
+				height: 70px;
+				left: -100%;
+				top: 0;
+				background-color: white;
+			 }
+            .menu-open & {
+                left: 0;
+                &::before{
+                    content:'';
+                    left: 0;
+                }
+            }
+        }
+    }
+    @media (max-width:$mobile){//иконка бургера 
+        display: block;
+        position: absolute;
+        @include adaptiveValue("right", 30, 15);
+    }
+}
+
+//========================================================================================================================================================
+//Burger
+.icon-menu {
+    @media (max-width: $mobile) {
+        display: block;
+        position: relative;
+        width: 40px;
+        height: rem(22.5);
+        cursor: pointer;
+        z-index: 10;
+
+        span,
+        &::before,
+        &::after {
+            content: "";
+            transition: all 0.3s ease 0s;
+            right: 0;
+            position: absolute;
+            width: 100%;
+            height: rem(2);
+            background-color: black;
+			.menu-open &{
+				background-color: black;
+			}
+        }
+		
+        &::before {
+            top: 0;
+        }
+
+        &::after {
+            bottom: 0;
+        }
+
+        span {
+            top: calc(50% - rem(1));
+        }
+
+        .menu-open & {
+            span {
+                width: 0;
+            }
+
+            &::before,
+            &::after {}
+
+            &::before {
+                top: calc(50% - rem(1));
+                transform: rotate(-45deg);
+            }
+
+            &::after {
+                bottom: calc(50% - rem(1));
+                transform: rotate(45deg);
+            }
+        }
+    }
+}
