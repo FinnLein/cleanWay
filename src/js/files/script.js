@@ -4,7 +4,7 @@ import { dataMediaQueries, isMobile } from "./functions.js";
 import { flsModules } from "./modules.js";
 
 let intervalId;
-
+/*
 document.querySelectorAll('.menu-header__dropdown-toggle').forEach(e => {
     e.addEventListener('click', e => {
         const menu = e.currentTarget.dataset.path;
@@ -36,3 +36,4 @@ document.querySelectorAll('.menu-header__dropdown-toggle').forEach(e => {
         });
     });
 });
+*/
